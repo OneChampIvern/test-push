@@ -1,0 +1,21 @@
+<div class="container-fluid d-flex justify-content-center align-items-center ab">
+    <div class="form d-flex justify-content-center align-items-center row">
+        <table class="table table-striped col-sm-12">
+            <tbody>
+                <tr>
+                    <td>TestName:</td>
+                    <td>{{overview.testName}}</td>
+                </tr>
+                <tr>
+                    <td>Duration:</td>
+                    <td>{{overview.duration}} minutes</td>
+                </tr>
+                <tr>
+                    <td>PassScore:</td>
+                    <td>{{overview.passScore}} %</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class=" btn bg-primary text-light col-sm-12" [routerLink]="['/quiz-details']">OK</button>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<p>{{testQs.testName}} > Question {{i+1}} of {{testQs.questions.length}}</p>
+<div class="question">
+    <p>{{testQs.questions[i].question}}</p>
+    <hr>
+    <ul (click)="getAnswer($event)" *ngIf="!testQs.questions[i].multi">
+        <li>
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer" value="a" [checked]='correct[i]=="a"'>
+            <label for="answer">a. {{testQs.questions[i].options.a}}</label>
+        </li>
+        <li>
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer" value="b" [checked]='correct[i]=="b"'>
+            <label for="answer">b. {{testQs.questions[i].options.b}}</label>
+        </li>
+        <li>
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer" value="c" [checked]='correct[i]=="c"'>
+            <label for="answer">c. {{testQs.questions[i].options.d}}</label>
+        </li>
+        <li>
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer" value="d" [checked]='correct[i]=="d"'>
+            <label for="answer">d. {{testQs.questions[i].options.d}}</label>
+        </li>
+    </ul>
+    <ul *ngIf="testQs.questions[i].multi">
+        <li (click)="getChexboxAnswer($event)">
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer1" value="a">
+            <label for="answer1">a. {{testQs.questions[i].options.a}}</label>
+        </li>
+        <li (click)="getChexboxAnswer($event)">
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer2" value="b">
+            <label for="answer2">b. {{testQs.questions[i].options.b}}</label>
+        </li>
+        <li (click)="getChexboxAnswer($event)">
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer3" value="c">
+            <label for="answer3">c. {{testQs.questions[i].options.d}}</label>
+        </li>
+        <li (click)="getChexboxAnswer($event)">
+            <input [type]="testQs.questions[i].multi ? 'checkbox': 'radio' " name="answer4" value="d" [checked]='correct[i]=="d"'>
+            <label for="answer4">d. {{testQs.questions[i].options.d}}</label>
+        </li>
+    </ul>
+</div>
+<div class="button">
+    <button type="button" (click)="moveBack()">Previous</button>
+    <button type="button" (click)="next()" *ngIf="!flag">Next</button>
+    <button type="submit" (click)="submit()" *ngIf="!flag">Submit</button>
+
+</div>
