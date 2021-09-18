@@ -1,0 +1,12 @@
+<div class="container-fluid d-flex justify-content-center align-items-center ab">
+    <div class="form">
+        <form class="row" [formGroup]="formCode" (ngSubmit)="onSubmitForm()">
+            <input type="text" class="col-sm-9" id="inputText2" placeholder="Enter Code" name="code" formControlName="code">
+            <button type="submit" class=" btn-primary col-sm-3">Button</button>
+            <span *ngIf="formCode.controls.code.errors?.required && formCode.controls.code.touched" class="text-danger">Code is required</span>
+            <span class="text-danger" role="alert" *ngIf="error==-1">
+                Code is invalid
+            </span>
+        </form>
+    </div>
+</div>
